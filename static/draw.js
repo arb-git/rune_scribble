@@ -55,17 +55,17 @@ function redraw() {
     context.strokeStyle = curColor;
     context.lineJoin = "round";
     context.lineWidth = 3;
-for (var i = 0; i < clickX.length; i++) {
-    context.beginPath();
-    if (clickDrag[i] && i) {
-        context.moveTo(clickX[i - 1], clickY[i - 1]);
-    } else {
-        context.moveTo(clickX[i] - 1, clickY[i]);
+    for (var i = 0; i < clickX.length; i++) {
+        context.beginPath();
+        if (clickDrag[i] && i) {
+            context.moveTo(clickX[i - 1], clickY[i - 1]);
+        } else {
+            context.moveTo(clickX[i] - 1, clickY[i]);
+        }
+        context.lineTo(clickX[i], clickY[i]);
+        context.closePath();
+        context.stroke();
     }
-    context.lineTo(clickX[i], clickY[i]);
-    context.closePath();
-    context.stroke();
-}
 }
 
 /**
@@ -80,3 +80,14 @@ function save() {
     url.value = image.src;
 
 }
+
+/**
+    - Clear canvas
+**/
+/**
+function clear() {
+    // context = document.getElementById('canvas').getContext("2d");
+    console.log('clear() function from draw.js got called.')
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+}
+**/
