@@ -37,5 +37,9 @@
         }
     </script>
 
+    <input type="file" id="files" accept="image/*" />
+    <script>
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    </script>
     </body>
 </html>
