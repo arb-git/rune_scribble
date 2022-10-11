@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 from pathlib import Path
 from utils import Cv2ImgShow, PltShowImage
+from skimage.morphology import skeletonize
 
 root = Path('.')
 
@@ -18,4 +19,8 @@ if __name__ == '__main__':
     image = cv2.imread(img_path)
 
     grayscale_image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    PltShowImage(grayscale_image)
+    _, thresholded = cv2.threshold(grayscale_image, 80, 1, 0)
+    skeletonized = skeletonize(thresholded)
+
+    PltShowImage(skeletonized)
+    pass
