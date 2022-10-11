@@ -18,4 +18,4 @@ if __name__ == '__main__':
     image = cv2.imread(img_path)
 
     grayscale_image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    pass
+    PltShowImage(grayscale_image)

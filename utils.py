@@ -1,5 +1,5 @@
 import cv2
-from matplotlib import plt
+import matplotlib.pyplot as plt
 import random
 import string
 
