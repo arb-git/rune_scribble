@@ -7,10 +7,15 @@
 """
 
 import cv2
+import numpy as np
 from pathlib import Path
+from utils import Cv2ImgShow, PltShowImage
 
 root = Path('.')
 
 if __name__ == '__main__':
-    image = cv2.imread(root/'static'/'images'/'image.png')
+    img_path = str(Path(root/'static'/'images'/'input.png').absolute())
+    image = cv2.imread(img_path)
+
+    grayscale_image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     pass
