@@ -47,7 +47,7 @@ def predict():
 
 
                 #Associating the index and its value within the dictionnary
-                final_pred = index
+                final_pred = 0
 
                 cv2.imwrite('static/images/input.png', image)
                 cv2.imwrite('static/images/output.png', cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
